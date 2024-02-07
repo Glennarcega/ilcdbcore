@@ -1,7 +1,7 @@
 # myapp/views.py
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .models import InternshipApplication
+from ilcdbcore.models import InternshipApplication
 
 def home(request):
     return render(request, 'home.html')
