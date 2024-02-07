@@ -47,7 +47,7 @@ def edit_data_ojt(request, application_id):
         application.save()
         
         # Redirect to a success page or any other page
-        return redirect('home')  # You can change 'home' to the appropriate URL name
+        return redirect('epmd')  # You can change 'home' to the appropriate URL name
         
     # Render the edit_data_ojt.html template with the retrieved application object
     return render(request, 'edit_data_ojt.html', {'application': application})
