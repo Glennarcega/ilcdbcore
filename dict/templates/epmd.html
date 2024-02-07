@@ -60,8 +60,11 @@
                             <a href="{% url 'edit_data_ojt' application.id %}">
                                 <button type="button" style="padding: 5px 13px; background-color: #4A5568; color: white; border: none; border-radius: 4px; cursor: pointer;" onmouseover="this.style.backgroundColor='#CBD5E0'; this.style.color='black'" onmouseout="this.style.backgroundColor='#4A5568'; this.style.color='white'">Edit</button>
                             </a>
-                            <button type="button" style="padding: 5px 13px; background-color: #4A5568; color: white; border: none; border-radius: 4px; cursor: pointer;" onmouseover="this.style.backgroundColor='#CBD5E0'; this.style.color='black'" onmouseout="this.style.backgroundColor='#4A5568'; this.style.color='white'">View</button>
-                        </td>
+                            <a href="{% url 'view_data_ojt' application.id %}">
+                              <button type="button" style="padding: 5px 13px; background-color: #4A5568; color: white; border: none; border-radius: 4px; cursor: pointer;" onmouseover="this.style.backgroundColor='#CBD5E0'; this.style.color='black'" onmouseout="this.style.backgroundColor='#4A5568'; this.style.color='white'">View</button>
+                          </a>
+
+                          </td>
                       </tr>
                   {% endfor %}
               </tbody>              
