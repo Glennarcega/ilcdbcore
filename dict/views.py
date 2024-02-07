@@ -1,5 +1,7 @@
 # myapp/views.py
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from .models import InternshipApplication
 
 def home(request):
     return render(request, 'home.html')
@@ -21,14 +23,9 @@ def projectClick(request):
 
 
 
-from django.shortcuts import render
-from django.http import HttpResponse
-from .models import InternshipApplication
-
 def insert_data(request):
     if request.method == 'POST':
         # Assuming you receive data from a form POST request
-        id = request.POST.get('id')
         ojt_duration = request.POST.get('ojt_duration')
         province = request.POST.get('province')
         school = request.POST.get('school')
@@ -36,7 +33,7 @@ def insert_data(request):
         
         # Create an instance of InternshipApplication with the provided id
         new_application = InternshipApplication(
-            id=id,
+            
             ojt_duration=ojt_duration,
             province=province,
             school=school,
@@ -46,6 +43,10 @@ def insert_data(request):
         # Save the new application to the database
         new_application.save()
         
-        return HttpResponse('Data inserted successfully!')
+        return redirect('epmd')
     else:
         return HttpResponse('Please use a POST request to insert data.')
+    
+def epmd(request):
+    applications = InternshipApplication.objects.all()
+    return render(request, 'epmd.html', {'applications': applications})

@@ -9,4 +9,5 @@ urlpatterns = [
     path('tmd/', tmd, name='tmd'),     # URL for the tmd view
     path('projectClick/', projectClick, name='projectClick'),  # URL for the projectClick view
     path('insert_data/', insert_data, name='insert_data'),
+ 
 ]

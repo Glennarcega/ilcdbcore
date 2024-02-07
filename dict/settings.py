@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'dict.wsgi.application'
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'DICT',
-    'USER': 'cyberhood01',
-    'PASSWORD': 'wl2nkTIqXi4W',
-    'HOST': 'ep-orange-cherry-a1ml85mu.ap-southeast-1.aws.neon.tech',
+    'NAME': 'ilcdbcoredb',
+    'USER': 'postgres',
+    'PASSWORD': '12345',
+    'HOST': 'localhost',
     'PORT': '5432',
-    'OPTIONS': {'sslmode': 'require'},
+
   }
 }
 
